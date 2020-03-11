@@ -19,7 +19,7 @@
 import HelloWorld from './components/HelloWorld.vue'
 import axios from "axios";
 
-const apiFtUrl = 'http://api.ft.com/content/search/v1';
+const apiFtUrl = 'https://api.ft.com/content/search/v1';
  
     export default {
         name: 'App',
