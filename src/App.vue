@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <img alt="Vue logo" src="./assets/logo.png">
-        <HelloWorld msg="Welcome to Your Vue.js App" :toggle="toggle" />
+        <HelloWorld :msg="msg" :toggle="toggle" />
         <div>
             <input v-model="item" />
             <button @click="addItem()">
@@ -20,7 +20,7 @@ import HelloWorld from './components/HelloWorld.vue'
 import axios from "axios";
 
 const apiFtUrl = 'https://api.ft.com/content/search/v1';
- 
+
     export default {
         name: 'App',
         components: {
@@ -30,10 +30,11 @@ const apiFtUrl = 'https://api.ft.com/content/search/v1';
             return {
                 messages: [],
                 show: false,
-                item: ''
+                item: '',
+                msg: process.env.VUE_APP_MSG
             }
         },
-        methods: {  
+        methods: {
             async toggle() {
                 //const callPromise = () => new Promise(resolve => setTimeout(() => resolve(), 1000));
                 //await callPromise();
@@ -61,7 +62,7 @@ const apiFtUrl = 'https://api.ft.com/content/search/v1';
 
         }
     }
-  
+
 
 
 </script>
